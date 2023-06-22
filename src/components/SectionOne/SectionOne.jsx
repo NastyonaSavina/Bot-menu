@@ -1,51 +1,20 @@
-import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { toast } from 'react-toastify';
 import './SectionOne.css';
+import { selectFirstStepItems } from 'redux/firstStep/firstStep.selectors';
+import { setStepOne } from 'redux/firstStep/firstStep.reducer';
 
 
 
 const SectionOne = () => {
+  const firstStepList = useSelector(selectFirstStepItems);
+  const dispatch = useDispatch();
 
+    const handleSelection = event => {
+       dispatch(setStepOne(event.target.value));
+    };
 
-//   const handleChange = (value, name) => {
-//     setValues(prev => ({ ...prev, [name]: value }));
-//   };
-
-//   const handleChangeCompany = event => {
-//      setValues(prev => ({ ...prev, companyName: event.target.value }));
-//   };
-
-//   const handleChangeCurrency = event => {
-//     if (event.target.checked === true) {
-//       setValues(prev => ({ ...prev, currency: event.target.value }));
-//     }
-//   };
-
-//   const handleSubmit = async event => {
-//     event.preventDefault();
-
-//     try {
-
-//       await dispatch(addBill(values));
-
-//       setIsOpenForm(false);
-//       toast.success('Success!');
-//       setValues(initialState);
-//     } catch (e) {
-//       console.log(e);
-//       toast.error('Some error');
-//     }
-//   };
-
-//   const handleOpenForm = (event) => {
-//         setIsOpenForm(true);
-
-// }
-
-
-
+  
   return (
     <>
       <div className="section-layout">
@@ -57,7 +26,7 @@ const SectionOne = () => {
           <select
             className="form-select"
             id="autoSizingSelect"
-            // onChange={handleChangeCompany}
+            onChange={handleSelection}
             required
           >
             <option value=""> Виберіть значення...</option>
@@ -66,6 +35,7 @@ const SectionOne = () => {
             <option value="Company3">Варіант 3</option>
             <option value="Company4">Варіант 4</option>
             <option value="Company5">Варіант 5</option>
+            <option value="Company5">Варіант 6</option>
           </select>
         </div>
       </div>

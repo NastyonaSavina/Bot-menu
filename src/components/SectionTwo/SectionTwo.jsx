@@ -29,11 +29,36 @@ const SectionTwo= () => {
             required
           >
             <option value=""> Виберіть значення...</option>
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                value="Company1"
+                id="flexCheckDefault"
+                // onChange={handleChange}
+              />
+              <label className="form-check-label" htmlFor="flexCheckDefault">
+                Company1
+              </label>
+            </div>
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                value="Company1"
+                id="flexCheckDefault"
+                // onChange={handleChange}
+              />
+              <label className="form-check-label" htmlFor="flexCheckDefault">
+                Company1
+              </label>
+            </div>
             <option value="Company1">Варіант 1</option>
             <option value="Company2">Варіант 2</option>
             <option value="Company3">Варіант 3</option>
             <option value="Company4">Варіант 4</option>
             <option value="Company5">Варіант 5</option>
+            <option value="Company5">Варіант 6</option>
           </select>
         </div>
       </div>

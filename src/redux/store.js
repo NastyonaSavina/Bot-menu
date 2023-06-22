@@ -7,9 +7,9 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
+import { firstStepReducer } from './firstStep/firstStep.reducer';
 
-import { filtersReducer } from './filter/filter.reducer';
-import { billssReducer } from './bills/bills.reducer';
+
 
 const middleware = [
   ...getDefaultMiddleware({
@@ -23,8 +23,7 @@ const middleware = [
 
 export const store = configureStore({
   reducer: {
-    bills: billssReducer,
-    filter: filtersReducer,
+    firstStep: firstStepReducer,
   },
   middleware,
   devTools: process.env.NODE_ENV === 'development',
